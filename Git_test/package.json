@@ -1,0 +1,24 @@
+{
+  "name": "git_test",
+  "version": "1.0.0",
+  "description": "this a test directory t o learn git and node",
+  "main": "index.html",
+  "scripts": {
+    "start":"npm run lite",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "lite":"lite-server"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kartik-gupta-ij/Git_test.git"
+  },
+  "author": "Kartik Gupta",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kartik-gupta-ij/Git_test/issues"
+  },
+  "homepage": "https://github.com/kartik-gupta-ij/Git_test#readme",
+  "devDependencies": {
+    "lite-server": "^2.6.1"
+  }
+}
