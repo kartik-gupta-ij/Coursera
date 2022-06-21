@@ -15,6 +15,24 @@
 </head>
 
 <body>
+    <nav class="navbar navbar-dark fixed-top navbar-expand-sm">
+        <div class="container">
+            <button class="navbar-toggler" type="button"  data-toggle="collapse" data-target="#Navbar">
+                <span class="navbar-toggler-icon"></span>
+                
+            </button>
+        <a class="navbar-brand mr-auto" href="./">Brand</a>
+            <div class="collapse navbar-collapse" id="Navbar">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item "><a class="nav-link"href="./">Home</a></li>
+            <li class="nav-item active"><a class="nav-link"href="#">About US</a></li>
+            <li class="nav-item "><a class="nav-link"href="#">Menu</a></li>
+            <li class="nav-item"><a class="nav-link"href="#">Contact</a></li>
+
+        </ul>
+    </div>
+    </div>
+    </nav>
 
     <header class="jumbotron">
         <div class="container">
@@ -30,8 +48,14 @@
     </header>
 
     <div class="container">
-        <div >
-            <div >
+        <div class="row">
+            <div class="col-12 breadcrumb">
+                <li class="breadcrumb-item"><a href="./">Home</a></li>
+                <li class="breadcrumb-item active">About Us</li>
+
+
+            </div>
+            <div class="col-12">
                <h3>About Us</h3>
                <hr>
             </div>
@@ -70,7 +94,7 @@
                 <div class="col-4 offset-1 col-sm-2">
                     <h5>Links</h5>
                     <ul class="list-unstyled">
-                        <li><a href="#">Home</a></li>
+                        <li><a href="./">Home</a></li>
                         <li><a href="#">About</a></li>
                         <li><a href="#">Menu</a></li>
                         <li><a href="#">Contact</a></li>
