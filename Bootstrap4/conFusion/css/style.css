@@ -37,3 +37,11 @@ body{
 .navbar{
     background-color: #512da8;
 }
+
+.tab-content{
+    border-left: #ddd solid 1px;
+    border-right: #ddd solid 1px;
+    border-bottom: #ddd solid 1px;
+    padding: 10px;
+
+}
