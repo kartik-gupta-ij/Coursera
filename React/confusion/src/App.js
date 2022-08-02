@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { Navbar, NavbarBrand } from 'reactstrap';
 import Menu from './components/MenuComponent';
 import {DISHES} from './shared/dishes.js';
-import logo from './logo.svg';
+
 import './App.css';
 
 class App extends Component {
