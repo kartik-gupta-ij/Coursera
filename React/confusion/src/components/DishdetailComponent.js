@@ -23,11 +23,12 @@ class DishdetailComponent extends Component {
         </Card>
         </div>
         <div className='col-12 col-md-5 m-1'>
+            <h4>Comments</h4>
         {this.props.dish.comments.map((commentp)=>{
         return(
             <div key={commentp.id}>
             <h5>{commentp.comment}</h5>
-            <p>--{commentp.author}, {commentp.date}</p>
+            <p>--{commentp.author}, {new Intl.DateTimeFormat('en-US', {year: 'numeric', month: 'long', day: '2-digit'}).format(new Date(commentp.date))}</p>
             </div>
         )
 
