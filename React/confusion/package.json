@@ -10,6 +10,7 @@
     "react-dom": "^18.2.0",
     "react-popper": "^2.3.0",
     "react-redux": "^8.0.2",
+    "react-redux-form": "^1.16.14",
     "react-router-dom": "^4.2.2",
     "react-scripts": "1.1.4",
     "reactstrap": "^9.1.2",
