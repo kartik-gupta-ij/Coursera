@@ -13,16 +13,16 @@
 
 * Move to this folder in your terminal window, and type the following at the command prompt to start the server:
 
-```     json-server --watch db.json -p 3001 -d 2000 ```
+```bash    json-server --watch db.json -p 3001 -d 2000 ```
 
 ## Installing Web-server
 * Open React/confusion folder in your terminal window, and type the following at the command prompt to Installing the server:
 
-``` npm install ```
+```bashnpm install ```
 ## Configuring the Server
 
 * After seting-up web server type the following at the command prompt to start the server:
 
-``` npm start ```
+```bashnpm start ```
 
 
