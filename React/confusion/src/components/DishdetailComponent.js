@@ -10,7 +10,7 @@ const maxLength = (len) => (val) => (val) && (val.length <= len)
 const minLength = (len) => (val) => (val) && (val.length >= len)
 
 
-class CommentFormComponent extends Component{
+class CommentForm extends Component{
       constructor(props)
       {
         super(props);
@@ -27,7 +27,7 @@ class CommentFormComponent extends Component{
       }
       handleSubmit(values){
         this.toggleModal();
-        this.props.addComment(this.props.dishId, values.rating, values.author, values.comment);
+        this.props.postComment(this.props.dishId, values.rating, values.author, values.comment);
       }
       render(){
       return(
@@ -118,7 +118,7 @@ class CommentFormComponent extends Component{
         </div>
       )
     }
-    function RenderComments({comments, addComment, dishId}) {
+    function RenderComments({comments, postComment, dishId}) {
       if (comments !=null)
       return(
         <div className="col-12">
@@ -133,7 +133,7 @@ class CommentFormComponent extends Component{
               )
             })}
           </ul>
-          <CommentFormComponent dishId={dishId} addComment={addComment} />
+          <CommentForm dishId={dishId} postComment={postComment} />
         </div>
       )
       else
@@ -179,7 +179,7 @@ class CommentFormComponent extends Component{
                   <RenderDish dish={props.dish} />
               </div>
               <div className="col-12 col-md-5 m-1">
-              <RenderComments comments={props.comments} addComment={props.addComment} dishId={props.dish.id}/>
+              <RenderComments comments={props.comments}   postComment={props.postComment} dishId={props.dish.id}/>
               </div>
           </div>
           </div>
