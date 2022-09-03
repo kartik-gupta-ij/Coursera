@@ -4,9 +4,11 @@ import { Card, CardImg, CardText, CardBody,
   import { Control,LocalForm,Errors } from 'react-redux-form'
 import { Link } from 'react-router-dom';
 import { Loading } from './LoadingComponent';
+import { baseUrl } from '../shared/baseUrl';
 const required = (val) => val && val.length;
 const maxLength = (len) => (val) => (val) && (val.length <= len)
 const minLength = (len) => (val) => (val) && (val.length >= len)
+
 
 class CommentFormComponent extends Component{
       constructor(props)
@@ -106,7 +108,7 @@ class CommentFormComponent extends Component{
       return (
         <div className="col-12">
           <Card>
-            <CardImg top src={dish.image} alt={dish.name}></CardImg>
+          <CardImg top src={baseUrl + dish.image} alt={dish.name} />
             <CardBody>
               <CardTitle>{dish.title}</CardTitle>
               <CardText>{dish.description}</CardText>
