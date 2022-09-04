@@ -201,13 +201,6 @@
       "comment": "It's your birthday, we're gonna party!",
       "author": "25 Cent",
       "date": "2011-12-02T17:57:28.556094Z"
-    },
-    {
-      "dishId": 0,
-      "author": "vbnv",
-      "comment": "jgjg",
-      "date": "2022-09-03T16:04:32.652Z",
-      "id": 20
     }
   ],
   "promotions": [
@@ -270,6 +263,17 @@
       "message": "afadsfds",
       "date": "2017-12-04T09:41:49.890Z",
       "id": 1
+    },
+    {
+      "firstname": "Kartik",
+      "lastname": "Gupta ",
+      "telnum": "9125224595",
+      "email": "kartikgupta7267@gmail.com",
+      "agree": true,
+      "contactType": "Tel.",
+      "message": "test",
+      "date": "2022-09-04T11:17:32.287Z",
+      "id": 2
     }
   ]
 }
