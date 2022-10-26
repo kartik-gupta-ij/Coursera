@@ -13,23 +13,25 @@ connect.then((db) => {
         name: 'Uthappizza',
         description: 'test'
     });
+    Dishes.create({
+      name: 'Uthapizza',
+      description: 'Test'
+  })
+  .then((dish) => {
+      console.log(dish);
+      
+      return Dishes.find({}).exec();
+  })
+  .then((dishes) => {
+      console.log(dishes);
 
-    newDish.save()
-        .then((dish) => {
-            console.log(dish);
-
-            return Dishes.find({});
-        })
-        .then((dishes) => {
-            console.log(dishes);
-
-            return Dishes.remove({});
-        })
-        .then(() => {
-            return mongoose.connection.close();
-        })
-        .catch((err) => {
-            console.log(err);
-        });
+      return Dishes.remove({});
+  })
+  .then(() => {
+      return mongoose.connection.close();
+  })
+  .catch((err) => {
+      console.log(err);
+  });
 
 });
