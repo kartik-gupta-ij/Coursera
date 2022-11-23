@@ -35,10 +35,18 @@ favoritesRouter.route('/')
           }
           Favorites.create({ user: req.user._id, dishes: dishes })
             .then((favorite) => {
-              res.statusCode = 200;
-              res.setHeader('Content-Type', 'application/json');
-              res.json(favorite);
-            }, (err) => next(err));
+              Favorites.findById(favorite._id)
+                .populate('user')
+                .populate('dishes')
+                .then((favorite) => {
+                  res.statusCode = 200;
+                  res.setHeader('Content-Type', 'application/json');
+                  res.json(favorite);
+                })
+            })
+            .catch((err) => {
+              return next(err);
+            });
         }
         else {
           for (var i = (req.body.dishes.length - 1); i >= 0; i--) {
@@ -48,10 +56,18 @@ favoritesRouter.route('/')
           }
           favorite.save()
             .then((favorite) => {
-              res.statusCode = 200;
-              res.setHeader('Content-Type', 'application/json');
-              res.json(favorite);
-            }, (err) => next(err));
+              Favorites.findById(favorite._id)
+                .populate('user')
+                .populate('dishes')
+                .then((favorite) => {
+                  res.statusCode = 200;
+                  res.setHeader('Content-Type', 'application/json');
+                  res.json(favorite);
+                })
+            })
+            .catch((err) => {
+              return next(err);
+            });
         }
       }, (err) => next(err))
       .catch((err) => next(err));
@@ -76,20 +92,36 @@ favoritesRouter.route('/:dishId')
         if (favorite == null) {
           Favorites.create({ user: req.user._id, dishes: [req.params.dishId] })
             .then((favorite) => {
-              res.statusCode = 200;
-              res.setHeader('Content-Type', 'application/json');
-              res.json(favorite);
-            }, (err) => next(err));
+              Favorites.findById(favorite._id)
+              .populate('user')
+              .populate('dishes')
+              .then((favorite) => {
+                res.statusCode = 200;
+                res.setHeader('Content-Type', 'application/json');
+                res.json(favorite);
+              })
+          })
+          .catch((err) => {
+            return next(err);
+          });
         }
         else {
           if (favorite.dishes.indexOf(req.params.dishId) == -1) {
             favorite.dishes.push(req.params.dishId)
             favorite.save()
               .then((favorite) => {
-                res.statusCode = 200;
-                res.setHeader('Content-Type', 'application/json');
-                res.json(favorite);
-              }, (err) => next(err));
+                Favorites.findById(favorite._id)
+                .populate('user')
+                .populate('dishes')
+                .then((favorite) => {
+                  res.statusCode = 200;
+                  res.setHeader('Content-Type', 'application/json');
+                  res.json(favorite);
+                })
+            })
+            .catch((err) => {
+              return next(err);
+            });
           }
           else {
             var err = new Error('Already There');
@@ -118,10 +150,18 @@ favoritesRouter.route('/:dishId')
             favorite.dishes.splice(favorite.dishes.indexOf(req.params.dishId), 1)
             favorite.save()
               .then((favorite) => {
-                res.statusCode = 200;
-                res.setHeader('Content-Type', 'application/json');
-                res.json(favorite);
-              }, (err) => next(err));
+                Favorites.findById(favorite._id)
+                .populate('user')
+                .populate('dishes')
+                .then((favorite) => {
+                  res.statusCode = 200;
+                  res.setHeader('Content-Type', 'application/json');
+                  res.json(favorite);
+                })
+            })
+            .catch((err) => {
+              return next(err);
+            });
           }
         }
       }, (err) => next(err))
