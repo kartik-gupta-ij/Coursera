@@ -6,6 +6,7 @@ router.use(bodyParser.json());
 var passport = require('passport');
 var authenticate = require('../authenticate');
 const cors = require('./cors');
+const { use } = require('passport');
 
 router.options('*', cors.corsWithOptions, (req, res) => { res.sendStatus(200); } )
 
@@ -51,7 +52,7 @@ router.post('/signup',cors.corsWithOptions,  (req, res, next) => {
 
 router.post('/login', cors.corsWithOptions, (req, res, next) => {
 
-  passport.authenticate('local', (err, user, info) => {
+  passport.authenticate('local', {session: false}, (err, user, info) => {
     if (err)
       return next(err);
 
@@ -60,7 +61,7 @@ router.post('/login', cors.corsWithOptions, (req, res, next) => {
       res.setHeader('Content-Type', 'application/json');
       res.json({success: false, status: 'Login Unsuccessful!', err: info});
     }
-    req.logIn(user, (err) => {
+    req.logIn(user , {session: false}, (err) => {
       if (err) {
         res.statusCode = 401;
         res.setHeader('Content-Type', 'application/json');
